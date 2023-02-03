@@ -15,6 +15,7 @@ import sys
 
 def birthdayCakeCandles(candles):
     # Write your code here
+    candles.sort(reverse=True)
     max=0
     count=0
     for i in candles:
