@@ -1,0 +1,32 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+def diagonalDifference(arr):
+    row = len(arr)
+    col = len(arr[0])
+    s=0
+    p=0
+    for i in range(row):
+        for j in range(col):
+            if i==j:
+                s = s+arr[i][j]
+                # print('s',s)
+    for i in range(row):
+        for j in range(col):
+            if i+j==row-1:
+                p=p+arr[i][j]
+                # print('p',p)
+    print(abs(s-p))
+
+
+n = int(input().strip())
+arr = []
+for _ in range(n):
+    arr.append(list(map(int, input().rstrip().split())))
+
+result = diagonalDifference(arr)
+
