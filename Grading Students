@@ -15,7 +15,20 @@ import sys
 
 def gradingStudents(grades):
     # Write your code here
+    out = []
+    for i in grades:
+        temp = 5 - i %5
+        out.append(i+temp)
 
+    for i in range(len(grades)):
+        if grades[i] < 38:
+            grades[i] = grades[i]
+        elif out[i] - grades[i] < 3:
+            grades[i] = out[i]
+        elif out[i] - grades[i] >= 3:
+            grades[i] = grades[i]
+    return grades
+ 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
